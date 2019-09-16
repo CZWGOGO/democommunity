@@ -46,6 +46,8 @@ public class AuthorizeController {
         String accesssToken = githubProvider.getAccesssToken(accessTokenDTO);
         GithubUser githubUser = githubProvider.getUser(accesssToken);
         System.out.println(githubUser.getName());
+
+        //获取授权用户信息并重定向到登陆页
         if(githubUser!=null){
             User user = new User();
             user.setToken(UUID.randomUUID().toString());
