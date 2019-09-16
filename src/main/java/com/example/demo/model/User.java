@@ -3,6 +3,7 @@ package com.example.demo.model;
 /**
  * Created by CZWGOGO on 2019/9/16 2:14
  */
+//用户数据
 public class User {
     private Integer id;
     private String name;
