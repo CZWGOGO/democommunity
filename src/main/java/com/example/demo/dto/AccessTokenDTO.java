@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
-public class AccessTokenDTO
-{
+public class AccessTokenDTO {
     private String client_id;
     private String Client_secret;
     private String code;

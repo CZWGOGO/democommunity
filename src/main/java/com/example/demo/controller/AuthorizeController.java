@@ -22,10 +22,10 @@ public class AuthorizeController {
     private String clientId;
 
     @Value("${github.client.secret}")
-    private  String clientSecret;
+    private String clientSecret;
 
     @Value("${github.redirect.uri}")
-    private  String redirectUri;
+    private String redirectUri;
 
     @Autowired
     private GithubProvider githubProvider;
@@ -34,10 +34,10 @@ public class AuthorizeController {
     private UserMapper userMapper;
 
     @GetMapping("/callback")
-    public String callback(@RequestParam(name="code") String code,
-                           @RequestParam(name="state") String state,
-                                   HttpServletRequest request,
-                                    HttpServletResponse response) {
+    public String callback(@RequestParam(name = "code") String code,
+                           @RequestParam(name = "state") String state,
+                           HttpServletRequest request,
+                           HttpServletResponse response) {
 
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setCode(code);
@@ -51,9 +51,9 @@ public class AuthorizeController {
         System.out.println(githubUser.getName());
 
         //获取授权用户信息并重定向到登陆页
-        if(githubUser!=null){
+        if (githubUser != null) {
             User user = new User();
-            String token=UUID.randomUUID().toString();
+            String token = UUID.randomUUID().toString();
             user.setToken(token);
 
             user.setName(githubUser.getName());
@@ -61,12 +61,12 @@ public class AuthorizeController {
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
-            response.addCookie(new Cookie("token",token));
-            request.getSession().setAttribute("user",githubUser);
+            response.addCookie(new Cookie("token", token));
+            request.getSession().setAttribute("user", githubUser);
 
             return "redirect:/";
             //登陆成功，写cookie和session
-        }else{
+        } else {
             return "redirect:/";
             //登陆失败，重新登陆
         }
