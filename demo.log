@@ -1,8 +1,0 @@
-2019-11-10 18:23:10.881  INFO 16000 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2019-11-10 18:23:14.396  INFO 16000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-11-10 18:23:15.639  INFO 16000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-11-10 18:23:15.945  INFO 16000 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 34.437 seconds (JVM running for 43.698)
-2019-11-10 18:30:44.358  INFO 16000 --- [Thread-62] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-11-10 18:30:44.362  INFO 16000 --- [Thread-62] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-11-10 18:30:44.475  INFO 16000 --- [Thread-62] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-11-10 18:30:44.580  INFO 16000 --- [Thread-62] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
